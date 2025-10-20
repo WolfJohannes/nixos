@@ -14,5 +14,8 @@
     docker-compose
     qemu
     virt-manager
+    firefox
+    discord
+    teamspeak3
   ];
 }

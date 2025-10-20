@@ -1,18 +1,15 @@
-{ config, pkgs, ... };
+{ config, pkgs, ... }:
 
 {
   networking.hostName = "nix-desktop";
   time.timeZone = "Europe/Amsterdam";
   i18n.defaultlocale = "en_US.UTF-8";
 
-  nix.settings.experimental-features = [ "nix-command", "flakes" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.configurationLimit = 5;
-  boot.loader.systemd-boot.timeout = 3;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.systemd-boot.secureBoot.enable = true;
-  boot.loader.systemd-boot.secureBoot.signed = true;
 
   fileSystems."/" = {
     device = "/dev/disk/by-label/nixos-root";
@@ -37,8 +34,6 @@
     nano
   ];
 
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     pulse.enable = true;

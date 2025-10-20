@@ -16,7 +16,6 @@
           ./configuration.nix
           ./hardware/desktop.nix
           ./users/maarten.nix
-          ./modules/btrfs-snapper.nix
         ];
       };
     };
